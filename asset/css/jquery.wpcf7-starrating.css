@@ -1,0 +1,66 @@
+
+.wpcf7-starratingawesome.starratingawesome{ clear:both; display: inline-block; float:none; padding:0;margin: 5px 0 10px; border:none;}
+.starratingawesome > input{margin-left:0}
+
+/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+   follow these rules. Every browser that supports :checked also supports :not(), so
+   it doesn’t make the test unnecessarily selective */
+
+   .starratingawesome:not(:checked) > input {
+    position:absolute;
+    clip:rect(0,0,0,0);
+}
+
+.starratingawesome:not(:checked) > label {
+    float:right;
+/*    padding:0 .1em;*/
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    color: #E1E5ED;
+    line-height: 1.2em;
+    width: 1em;
+    font-size: 100% ;
+    margin-right:0.2em;
+}
+/*
+.starratingawesome:not(:checked) > label:before {
+    padding: 0 0.2em 0 0;
+}
+*/
+
+.starratingawesome > input:checked ~ label {
+    color: #5DB4EC;
+}
+
+.starrating_number{    
+    color: #5DB4EC;
+    display: inline-block;
+    float: right;
+    line-height: 1em;
+    padding-left: 10px;
+    padding-right: 20px;
+    font-weight: bold;
+    font-size:110%;
+}
+
+
+
+.starratingawesome:not(:checked) > label:hover, .starratingawesome:not(:checked) > label:hover ~ label {
+    color: #FFD700;
+}
+
+.starratingawesome > input:checked + label:hover, .starratingawesome > input:checked + label:hover ~ label,
+.starratingawesome > input:checked ~ label:hover, .starratingawesome > input:checked ~ label:hover ~ label,
+.starratingawesome > label:hover ~ input:checked ~ label {
+    color: #EEAA00;
+}
+
+.starratingawesome > label:active {
+    position:relative;
+    top: auto;
+    left:0;
+}
+
+.lightcolor.rating_title {font-size: 15px; line-height: 15px; margin:0 0 5px!important;}
+
