@@ -5,7 +5,7 @@ Plugin URI: http://www.themelogger.com/contact-form-7-star-rating-plugin-font-aw
 Description: Contact Form 7 Star Rating with font Awersome
 Author: themelogger.com
 Author URI: http://www.themelogger.com/
-Version: 1.0
+Version: 1.1
 */
 
 /*  Copyright 2014 themelogger.com (email: support at jqhelp.com)
@@ -55,7 +55,7 @@ function contact_form_7_starrating_fields_awesome() {
 
 
 function wpcf7_enqueue_styles_awesome() {
-	wp_enqueue_style( 'prefix-font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css', array(), '4.0.3' );
+	wp_enqueue_style( 'prefix-font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', array(), '4.2.0' );
 }        
 
 
@@ -326,7 +326,7 @@ class StarratingAwesomeSettingsPage
         
         add_settings_field(
             'load_starrating_awesome', 
-            'Load Font Awesome 4.0.3', 
+            'Load Font Awesome 4.2.0', 
             array( $this, 'load_starrating_awesome_callback' ), 
             $this->page, 
             'setting_section_id'
