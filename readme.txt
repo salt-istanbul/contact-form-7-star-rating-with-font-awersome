@@ -1,4 +1,4 @@
-=== Contact Form 7 Star Rating with font Awersome ===
+=== Contact Form 7 Star Rating with font Awesome ===
 Contributors: themelogger
 Tags: font Awesome, awesome, Star Rating, Stars, Rating, Contact Form 7, form, forms, contactform7, contact form, cf7, cforms ii, cforms, Contact Forms 7, Contact Forms, contacted, contacts,jQuery Star Rating
 Requires at least: 3.8
