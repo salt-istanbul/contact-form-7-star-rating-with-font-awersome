@@ -27,7 +27,7 @@ Version: 1.2
 add_action('plugins_loaded', 'contact_form_7_starrating_fields_awesome', 11);
 function contact_form_7_starrating_fields_awesome() {
 	global $pagenow;
-	if(function_exists('wpcf7_add_shortcode')) {
+	if(function_exists('wpcf7_add_form_tag')) {
         $options = get_option( 'starratingawesome' );
         if(!isset($options) || $options=='') {
             $options = array('load_starrating_js'=>1,'load_starrating_css'=>1,'load_starrating_awesome'=>1) ;
@@ -35,8 +35,8 @@ function contact_form_7_starrating_fields_awesome() {
         
         $shortcode_handler = new StarratingAwesome ;
 
-		wpcf7_add_shortcode( 'starratingawesome', array($shortcode_handler,'shortcode_handler'), true );
-		wpcf7_add_shortcode( 'starratingawesome*', array($shortcode_handler,'shortcode_handler'), true );
+		wpcf7_add_form_tag( 'starratingawesome', array($shortcode_handler,'shortcode_handler'), true );
+		wpcf7_add_form_tag( 'starratingawesome*', array($shortcode_handler,'shortcode_handler'), true );
         
 //        if($options['load_starrating_js']==1) {
             add_action( 'wpcf7_enqueue_scripts', 'wpcf7_enqueue_scripts_starrating_awesome' );
@@ -105,9 +105,13 @@ class StarratingAwesome {
     /* Shortcode handler */
     function shortcode_handler( $tag ) {
 
-        if ( ! is_array( $tag ) ) {
-            return '';
+        if (is_a($tag, 'WPCF7_FormTag')) {
+                $tag = (array)$tag;
         }
+        if (empty($tag)) {
+                return '';
+        }
+
                     
         $tag = new WPCF7_Shortcode( $tag );        
                 
